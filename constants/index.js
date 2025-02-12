@@ -1,0 +1,4 @@
+const BASE62_ALPHABET = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+const ENCODED_BASE = 62;
+
+module.exports = { ENCODED_BASE, BASE62_ALPHABET };

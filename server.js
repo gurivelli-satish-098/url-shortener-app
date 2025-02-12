@@ -1,8 +1,10 @@
-const path = require("path");
 require("dotenv").config();
+const path = require("path");
 
 async function main() {
   const app = require("./app");
+  const sql = require("./databases/sql");
+  await sql.connect();
   return app;
 }
 

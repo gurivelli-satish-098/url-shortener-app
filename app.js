@@ -5,6 +5,7 @@ const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
 const corsMiddleware = require("./middlewares/cors");
 const registerRoutes = require("./routers");
+const errorMiddleware = require("./middlewares/error");
 
 app.use(
   morgan("combined", {
@@ -20,5 +21,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 //Routes
 registerRoutes(app);
+
+// Global error handling
+app.use(errorMiddleware);
 
 module.exports = app;
